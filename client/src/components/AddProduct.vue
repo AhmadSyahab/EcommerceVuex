@@ -37,7 +37,7 @@
 	    <div class="form-group">
 	      <small id="fileHelp" class="form-text text-muted">Max Size 600 x 600 .</small>
 	    </div>
-	    <button @click="addProduct" type="submit" class="btn btn-primary">Submit</button>
+	    <button @click.prevent="addProduct" class="btn btn-primary">Submit</button>
 	  </fieldset>
 	</form>	
 </template>

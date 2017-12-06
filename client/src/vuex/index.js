@@ -5,9 +5,10 @@ import axios from 'axios'
 Vue.use(Vuex)
 
 let local = "http://localhost:3000"
+let url = "http://ec2-34-216-160-66.us-west-2.compute.amazonaws.com:3030"
 
 let ax = Vue.prototype.$http = axios.create({
-	baseURL: local
+	baseURL: url
 })
 
 export default new Vuex.Store ({
@@ -140,7 +141,7 @@ export default new Vuex.Store ({
 				})
 			})			
 			.catch(err => {
-				alert(' login first ')
+				console.log(err)
 			})
 		},
 		signout (context) {
@@ -159,6 +160,7 @@ export default new Vuex.Store ({
 				image: payload.image				
 			})
 			.then(newProduct => {
+				console.log("masuk sini cuy")
 				context.commit('createProduct', {
 					newProduct : newProduct
 				})
